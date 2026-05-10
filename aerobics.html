@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AEROBIC GYMNASTICS — FITRIP FITNESS CLUB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/aerobics.css">
+</head>
+
+<body>
+
+    <div class="nav-back">
+        <a href="index.html">
+            <i data-lucide="arrow-left"></i>
+            Back to Main
+        </a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AEROBIC <span>GYMNASTICS</span></h1>
+            <p>Energy · Rhythm · Strength</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="program-info">
+            <div class="info-text">
+                <h2>Express Your <span class="gold">Intensity</span></h2>
+                <p>Aerobic gymnastics at Fitrip is a high-energy program that combines traditional gymnastics skills with complex, high-intensity movement patterns to music.</p>
+                <p>Improve your flexibility, strength, and cardiovascular endurance while mastering the art of movement.</p>
+                <a href="#form" class="btn btn-red">Join The Program</a>
+            </div>
+            <div class="info-image">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80" alt="Aerobics"
+                    style="width:100%; border-radius:12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+        <div class="registration-section" id="form">
+            <h2>Program Registration</h2>
+            <form id="aerobics-reg-form">
+                <div class="form-group-title">Personal Details</div>
+                <div class="form-grid">
+                    <div class="form-field full">
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-field">
+                        <label>Email Address</label>
+                        <input type="email" name="email" required placeholder="you@example.com">
+                    </div>
+                    <div class="form-field">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" required placeholder="+233 XX XXX XXXX">
+                    </div>
+                </div>
+
+                <div class="form-group-title">Health & Safety</div>
+                <div class="form-field full" style="margin-bottom: 20px;">
+                    <label class="checkbox-item" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" id="has-medical-toggle" name="hasMedical" style="width: 20px; height: 20px; accent-color: var(--red);">
+                        <span style="color: var(--gold); font-weight: 700; font-size: 14px;">I have a pre-existing medical condition or physical limitation.</span>
+                    </label>
+                </div>
+
+                <div id="medical-info-section" style="display: none; background: rgba(255, 26, 26, 0.05); border-left: 4px solid var(--red); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
+                    <div class="form-grid">
+                        <div class="form-field full">
+                            <label>Please describe your condition/limitation</label>
+                            <textarea name="medicalDetails" rows="2" placeholder="e.g. Previous injury, heart condition, etc."></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label>Are you on any medication?</label>
+                            <input type="text" name="medications" placeholder="Specify medications if any">
+                        </div>
+                        <div class="form-field">
+                            <label>Emergency Contact Number</label>
+                            <input type="tel" name="emergencyPhone" placeholder="In case of emergency">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-overlay">
+        <div class="success-card">
+            <div style="background: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                <i data-lucide="check" style="color: black; width: 32px; height: 32px; stroke-width: 3;"></i>
+            </div>
+            <h2 style="font-family: 'Anton'; font-size: 32px; margin-bottom: 16px;">SUCCESS!</h2>
+            <p style="color: #aaa; line-height: 1.6; margin-bottom: 30px;">Your registration for Aerobic Gymnastics has been received. We will contact you soon!</p>
+            <button class="btn btn-red" onclick="window.location.href='index.html'">Return Home</button>
+        </div>
+    </div>
+
+    <script src="js/aerobics.js"></script>
+</body>
+
+</html>

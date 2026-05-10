@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FITRIP FITNESS CLUB — Where Ghana Gets Strong</title>
+  <meta name="description"
+    content="FITRIP FITNESS CLUB — Accra's premier fitness community in Dzorwulu, N1 Highway. CrossFit, Boxing, Spinning, Yoga, Bodybuilding & more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="#" class="logo"><img src="images/favicon.jpg" alt="Fitrip Logo" style="height:40px; width:auto; vertical-align:middle; margin-right:10px; border-radius:4px;"><span class="brand-text">FIT<span class="accent">RIP</span></span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="nav-admin-btn" id="admin-btn"><i data-lucide="shield" style="width:13px;height:13px"></i>
+        Admin</button>
+      <button class="nav-cta" data-open-modal>Join Now</button>
+    </div>
+    <div class="burger"><i data-lucide="menu"></i></div>
+  </nav>
+
+  <!-- ============ ADMIN LOGIN MODAL ============ -->
+  <div id="admin-login-backdrop">
+    <div class="admin-login-card">
+      <div class="admin-login-logo">FIT<span>RIP</span></div>
+      <div class="admin-login-sub">Admin Access</div>
+      <label class="admin-login-label" for="admin-email-input">Email Address</label>
+      <input class="admin-login-input" id="admin-email-input" type="email" placeholder="admin@fitrip.gh"
+        autocomplete="email">
+      <label class="admin-login-label" for="admin-pass-input">Password</label>
+      <input class="admin-login-input" id="admin-pass-input" type="password" placeholder="••••••••"
+        autocomplete="current-password">
+      <div class="admin-login-err" id="admin-login-err">Incorrect email or password. Please try again.</div>
+      <button class="admin-login-btn" id="admin-login-submit">Sign In</button>
+      <button class="admin-login-cancel" id="admin-login-cancel">Cancel</button>
+    </div>
+  </div>
+
+  <!-- ============ ADMIN PANEL ============ -->
+  <div id="admin-panel" role="dialog" aria-modal="true" aria-label="Admin Panel">
+    <div class="admin-header">
+      <div class="admin-header-left">
+        <div class="admin-logo">FIT<span>RIP</span></div>
+        <div class="admin-title">Member Registry</div>
+      </div>
+      <button class="admin-close" id="admin-close" aria-label="Close admin panel">&times;</button>
+    </div>
+    <div class="admin-stats-bar" id="admin-stats-bar"></div>
+    <div class="admin-controls">
+      <input class="admin-search" id="admin-search" type="text" placeholder="🔍  Search by name, email, or phone...">
+      <select class="admin-filter-select" id="admin-plan-filter">
+        <option value="">All Plans</option>
+        <option value="monthly">Monthly</option>
+        <option value="3-months">3 Months</option>
+        <option value="yearly">Yearly</option>
+      </select>
+      <select class="admin-filter-select" id="admin-sort">
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+      </select>
+      <div class="admin-count" id="admin-count"></div>
+    </div>
+    <div class="admin-table-wrap" id="admin-table-wrap"></div>
+  </div>
+
+  <header class="hero">
+    <div id="hero-video" aria-label="Hero background video placeholder"></div>
+    <canvas id="hero-particles"></canvas>
+    <div class="hero-content">
+      <div class="tag">FITRIP FITNESS CLUB · ACCRA</div>
+      <h1>WHERE GHANA<br />GETS <span class="accent">STRONG</span></h1>
+      <p>Accra's Premier Fitness Community — Dzorwulu, N1 Highway</p>
+      <div class="hero-buttons">
+        <button class="btn btn-red" data-open-modal>Join Now</button>
+        <a href="#facilities" class="btn btn-outline">Explore the Gym</a>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>SCROLL</span>
+      <div class="line"></div>
+    </div>
+  </header>
+
+  <section class="stats" id="stats">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="num" data-count="1">0</div>
+        <div class="lbl">One of Accra's Biggest Gyms</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num gold" data-count="5">0</div>
+        <div class="lbl">CrossFit · Boxing · Spinning · Yoga · Bodybuilding</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num" data-count="20" data-suffix="+">0</div>
+        <div class="lbl">Professional Trainers</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num gold" data-count="6" data-suffix="+">0</div>
+        <div class="lbl">Years of Transformations</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">About Fitrip</div>
+        <h2 class="section-title">More Than a Gym.<br /><span class="gold">A Community.</span></h2>
+        <p>Fitrip isn't just where Accra works out — it's where Accra transforms. From beginners who never thought
+          they'd step foot in a gym, to CrossFit athletes flying in from Berlin — Fitrip is the fitness hub of Ghana.
+        </p>
+        <p>State-of-the-art equipment, expert coaches, and a community that pushes you to your limit.</p>
+        <a href="#facilities" class="btn btn-red">Discover Facilities</a>
+      </div>
+      <div class="about-image-wrap reveal">
+        <div class="about-image"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facilities" id="facilities">
+    <div class="fac-head reveal">
+      <div class="section-label">Facilities</div>
+      <h2 class="section-title">Built For <span class="gold">Champions</span></h2>
+      <p>Every tool you need to train hard, recover smart, and reach your peak.</p>
+    </div>
+    <div class="fac-grid" id="fac-grid"></div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="rev-head reveal">
+      <div class="section-label">Real Stories</div>
+      <h2 class="section-title">What Our <span class="gold">Members Say</span></h2>
+    </div>
+    <div class="rev-track-wrap">
+      <div class="rev-track" id="rev-track"></div>
+    </div>
+    <div class="rev-controls" id="rev-controls"></div>
+  </section>
+
+  <section class="classes" id="classes">
+    <div class="cls-head reveal">
+      <div class="section-label">Classes</div>
+      <h2 class="section-title">Train With <span class="gold">Intensity</span></h2>
+    </div>
+    <div class="cls-grid" id="cls-grid"></div>
+  </section>
+
+  <section class="cta" id="cta">
+    <div class="cta-content reveal">
+      <h2>Ready to Start Your<br /><span>Transformation?</span></h2>
+      <p>Join thousands of members already training at Accra's top fitness club.</p>
+      <button class="btn btn-red" data-open-modal>Get Started Today</button>
+      <div class="location">📍 Dzorwulu, N1 Highway — Adjacent Juicy Tank, near Dworwulu Special School</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">FIT<span>RIP</span></div>
+        <p>Ghana's Premier Fitness Community. Built for athletes, beginners, and everyone in between.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="TikTok"><i data-lucide="music-2"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#cta">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Classes</h4>
+        <ul>
+          <li><a href="aerobics.html" target="_blank">Gymnastics</a></li>
+          <li><a href="boxing-program.html" target="_blank">Boxing</a></li>
+          <li><a href="spinning-program.html" target="_blank">Spinning</a></li>
+          <li><a href="#">CrossFit</a></li>
+          <li><a href="strongman.html" target="_blank">Strongman</a></li>
+          <li><a href="yoga.html" target="_blank">Yoga</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#">Dzorwulu, Accra</a></li>
+          <li><a href="#">N1 Highway</a></li>
+          <li><a href="#">Mon-Sun: 5AM-10PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 FITRIP FITNESS CLUB · All Rights Reserved.</div>
+      <div>Ghana's Premier Fitness Community</div>
+    </div>
+  </footer>
+
+  <!-- ============ MEMBERSHIP MODAL ============ -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close"><i data-lucide="x"></i></button>
+
+      <div class="modal-header">
+        <div class="badge">FITRIP MEMBERSHIP</div>
+        <h2 id="modal-title">Join The <span>Movement</span></h2>
+        <p>Complete the form below to start your transformation journey.</p>
+      </div>
+
+      <form class="modal-body" id="membership-form" novalidate>
+
+        <!-- Personal Info -->
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">1</span>Personal Information</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Full Name <span class="req">*</span></label>
+              <input type="text" name="fullName" placeholder="Enter your full name" required>
+              <div class="err-msg">Please enter your full name</div>
+            </div>
+            <div class="form-field">
+              <label>Date of Birth <span class="req">*</span></label>
+              <input type="date" name="dob" required>
+              <div class="err-msg">Date of birth is required</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Phone Number <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="+233 XX XXX XXXX" required>
+              <div class="err-msg">Valid phone number required</div>
+            </div>
+            <div class="form-field">
+              <label>Email Address <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="you@example.com" required>
+              <div class="err-msg">Valid email required</div>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-field">
+              <label>Address <span class="req">*</span></label>
+              <input type="text" name="address" placeholder="Street, area, city" required>
+              <div class="err-msg">Address is required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">2</span>Emergency Contact</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Contact Name <span class="req">*</span></label>
+              <input type="text" name="emergencyName" placeholder="Full name" required>
+              <div class="err-msg">Emergency contact name required</div>
+            </div>
+            <div class="form-field">
+              <label>Contact Phone <span class="req">*</span></label>
+              <input type="tel" name="emergencyPhone" placeholder="+233 XX XXX XXXX" required>
+              <div class="err-msg">Emergency contact phone required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Health Info -->
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">3</span>Health Information</div>
+          <div class="toggle-row">
+            <label for="hasMedical">Do you have any medical conditions?</label>
+            <div class="toggle-switch">
+              <input type="checkbox" id="hasMedical" name="hasMedical">
+              <span class="toggle-slider"></span>
+            </div>
+          </div>
+          <div class="conditional" id="medicalConditional">
+            <div class="form-field">
+              <label>Please describe any medical conditions or injuries</label>
+              <textarea name="medicalDetails"
+                placeholder="Tell us about any conditions, allergies, injuries..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fitness Goals -->
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">4</span>Fitness Goals</div>
+          <div class="check-grid">
+            <label class="check-card">
+              <input type="checkbox" name="goals" value="weight-loss">
+              <span class="box"></span>
+              <span class="lbl-text">Weight Loss</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="goals" value="muscle-gain">
+              <span class="box"></span>
+              <span class="lbl-text">Muscle Gain</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="goals" value="general-fitness">
+              <span class="box"></span>
+              <span class="lbl-text">General Fitness</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="goals" value="other">
+              <span class="box"></span>
+              <span class="lbl-text">Other</span>
+            </label>
+          </div>
+          <div class="err-msg" id="goalsErr" style="margin-top:10px">Please select at least one goal</div>
+        </div>
+
+        <!-- Membership Plan -->
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">5</span>Membership Plan</div>
+          <div class="plan-grid">
+            <label class="plan-card">
+              <input type="radio" name="plan" value="monthly" required>
+              <div class="pname">Monthly</div>
+              <div class="pprice">GHS 500 / mo</div>
+            </label>
+            <label class="plan-card">
+              <input type="radio" name="plan" value="3-months">
+              <div class="pname">3 Months</div>
+              <div class="pprice">GHS 1,350</div>
+            </label>
+            <label class="plan-card">
+              <input type="radio" name="plan" value="yearly">
+              <div class="pname">Yearly</div>
+              <div class="pprice">GHS 4,800</div>
+            </label>
+          </div>
+          <div class="err-msg" id="planErr">Please select a plan</div>
+          <div class="form-row" style="margin-top:14px">
+            <div class="form-field">
+              <label>Start Date <span class="req">*</span></label>
+              <input type="date" name="startDate" required>
+              <div class="err-msg">Start date required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">6</span>Payment Details</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Amount (GHS) <span class="req">*</span></label>
+              <input type="number" name="amount" placeholder="0.00" min="0" required>
+              <div class="err-msg">Amount required</div>
+            </div>
+            <div class="form-field">
+              <label>Payment Method <span class="req">*</span></label>
+              <select name="paymentMethod" required>
+                <option value="">Select method</option>
+                <option value="mobile-money">Mobile Money</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="cash">Cash</option>
+                <option value="bank-transfer">Bank Transfer</option>
+              </select>
+              <div class="err-msg">Select a payment method</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Waiver -->
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">7</span>Waiver Agreement</div>
+          <div class="waiver-box">
+            I, the undersigned, acknowledge that participation in fitness activities at FITRIP FITNESS CLUB carries
+            inherent risks of physical injury. I voluntarily assume all risks associated with my participation. I
+            confirm that I am physically able to participate, and I release FITRIP FITNESS CLUB, its owners, employees,
+            and trainers from any liability resulting from my participation. I agree to follow all gym rules, safety
+            protocols, and trainer instructions. I confirm the information provided above is accurate.
+          </div>
+          <label class="waiver-agree">
+            <input type="checkbox" name="waiverAgree" required>
+            <span>I have read, understood, and agree to the waiver and terms above. <span class="req">*</span></span>
+          </label>
+          <div class="err-msg" id="waiverErr">You must agree to the waiver</div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Signature (Type Full Name) <span class="req">*</span></label>
+              <input type="text" name="signature" placeholder="Type your full name as signature" required
+                style="font-family:'Bebas Neue',cursive;font-size:18px;letter-spacing:.05em">
+              <div class="err-msg">Signature required</div>
+            </div>
+            <div class="form-field">
+              <label>Date <span class="req">*</span></label>
+              <input type="date" name="signDate" required>
+              <div class="err-msg">Date required</div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+      <div class="modal-footer">
+        <button type="submit" form="membership-form" class="submit-btn" id="submit-btn">Submit Application</button>
+      </div>
+
+      <!-- Success state -->
+      <div class="modal-success" id="modal-success">
+        <div class="success-icon"><i data-lucide="check" style="width:48px;height:48px;stroke-width:3"></i></div>
+        <h3>Welcome To <span>Fitrip!</span></h3>
+        <p>Your membership application has been received. Our team will contact you shortly to confirm your details and
+          welcome you to the Fitrip family.</p>
+        <button class="btn btn-red" id="success-close">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

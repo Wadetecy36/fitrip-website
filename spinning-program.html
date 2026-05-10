@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+
+    <meta charset="UTF_8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>SPINNING PROGRAM — FITRIP FITNESS CLUB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/spinning-program.css">
+</head>
+
+<body>
+
+    <div class="nav-back">
+        <a href="index.html">
+            <i data-lucide="arrow-left"></i>
+            Back to Main
+        </a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SPINNING <span>PROGRAM</span></h1>
+            <p>Ride The Rhythm. Feel The Burn.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="program-info">
+            <div class="info-text">
+                <h2>Why Choose <span class="gold">Cycling?</span></h2>
+                <p>Spinning is more than just a workout; it's a high-intensity, low-impact experience that transforms
+                    your body and mind. At Fitrip, our spinning studio features state-of-the-art bikes, immersive sound
+                    systems, and instructors who push you to your absolute limits.</p>
+
+                <ul class="benefits-list">
+                    <li><i data-lucide="heart"></i> <strong>Massive Cardio Boost:</strong> Strengthen your heart and
+                        lungs with every pedal.</li>
+                    <li><i data-lucide="flame"></i> <strong>High Calorie Burn:</strong> Burn 400-800 calories in a
+                        single 45-minute session.</li>
+                    <li><i data-lucide="shield-check"></i> <strong>Low Impact:</strong> Get a powerful workout without
+                        stressing your joints.</li>
+                    <li><i data-lucide="zap"></i> <strong>Leg Power:</strong> Build lean muscle in your quads, glutes,
+                        and calves.</li>
+                    <li><i data-lucide="smile"></i> <strong>Mental Clarity:</strong> Release endorphins and smash stress
+                        with high-energy music.</li>
+                </ul>
+
+                <a href="#register" class="btn btn-red">Join The Club</a>
+            </div>
+            <div class="info-image">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="Spinning Class"
+                    style="width:100%; border-radius:12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+        <div class="registration-section" id="register">
+            <h2>Join the Cycling Club</h2>
+            <p class="sub-head">FITRIP ACCRA CYCLING MEMBERSHIP</p>
+
+            <form id="spinning-reg-form">
+                <div class="form-group-title">Personal Details</div>
+                <div class="form-grid">
+                    <div class="form-field full">
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-field">
+                        <label>Email Address</label>
+                        <input type="email" name="email" required placeholder="yourname@example.com">
+                    </div>
+                    <div class="form-field">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" required placeholder="+233 XX XXX XXXX">
+                    </div>
+                </div>
+
+                <div class="form-group-title">Training Preferences</div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label>Experience Level</label>
+                        <select name="experience" required>
+                            <option value="">Select Level</option>
+                            <option value="beginner">Beginner (Never Spun)</option>
+                            <option value="intermediate">Intermediate (Regular Rider)</option>
+                            <option value="advanced">Advanced (Cycling Pro)</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Preferred Session Time</label>
+                        <select name="timeSlot" required>
+                            <option value="">Select Time</option>
+                            <option value="morning">Early Bird (5 AM - 8 AM)</option>
+                            <option value="lunch">Lunch Power (12 PM - 2 PM)</option>
+                            <option value="evening">After Work (5 PM - 8 PM)</option>
+                            <option value="weekend">Weekend Warriors</option>
+                        </select>
+                    </div>
+                    <div class="form-field full">
+                        <label>Main Fitness Goal</label>
+                        <textarea name="goals" rows="2" placeholder="e.g. Weight loss, endurance, heart health..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group-title">Health & Safety</div>
+                <div class="form-field full" style="margin-bottom: 20px;">
+                    <label class="checkbox-item" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" id="has-medical-toggle" name="hasMedical" style="width: 20px; height: 20px; accent-color: var(--red);">
+                        <span style="color: var(--gold); font-weight: 700; font-size: 14px;">I have a pre-existing medical condition or physical limitation.</span>
+                    </label>
+                </div>
+
+                <div id="medical-info-section" style="display: none; background: rgba(255, 26, 26, 0.05); border-left: 4px solid var(--red); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
+                    <div class="form-grid">
+                        <div class="form-field full">
+                            <label>Please describe your condition/limitation</label>
+                            <textarea name="medicalDetails" rows="2" placeholder="e.g. Previous knee injury, heart condition, asthma etc."></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label>Are you on any medication?</label>
+                            <input type="text" name="medications" placeholder="Specify medications if any">
+                        </div>
+                        <div class="form-field">
+                            <label>Emergency Contact Number</label>
+                            <input type="tel" name="emergencyPhone" placeholder="In case of emergency">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group-title">Agreements</div>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="waiver" required>
+                        <span>I agree to the health & safety waiver.</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="terms" required>
+                        <span>I agree to the Fitrip club rules.</span>
+                    </label>
+                </div>
+
+                <div class="submit-area">
+                    <button type="submit" class="btn btn-red">Submit Membership Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-overlay">
+        <div class="success-card">
+            <div
+                style="background: var(--gold); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">
+                <i data-lucide="check" style="color: black; width: 40px; height: 40px; stroke-width: 3;"></i>
+            </div>
+            <h2 style="font-family: 'Anton'; font-size: 36px; margin-bottom: 20px;">WELCOME ABOARD!</h2>
+            <p style="color: #aaa; line-height: 1.8; margin-bottom: 35px; font-size: 16px;">Your cycling club membership
+                request has been received. Our team will contact you within 24 hours to schedule your first ride!</p>
+            <button class="btn btn-red" onclick="window.location.href='index.html'">Return to Homepage</button>
+        </div>
+    </div>
+
+    <script src="js/spinning-program.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+
+    <meta charset="UTF_8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRONGMAN PROGRAM — FITRIP FITNESS CLUB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/strongman.css">
+</head>
+
+<body>
+
+    <div class="nav-back">
+        <a href="index.html">
+            <i data-lucide="arrow-left"></i>
+            Back to Main
+        </a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>STRONGMAN <span>PROGRAM</span></h1>
+            <p>Raw Power · Functional Strength</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="program-info">
+            <div class="info-text">
+                <h2>Unleash Your <span class="gold">Primal Strength</span></h2>
+                <p>Fitrip's Strongman program is not just about lifting weights; it's about moving awkward, heavy
+                    objects that challenge your entire body and grip strength.</p>
+                <p>From Atlas stones and farmer's walks to tire flips and log presses, our Strongman zone is equipped to
+                    turn you into a powerhouse of functional strength.</p>
+                <a href="#form" class="btn btn-red">Join The Program</a>
+            </div>
+            <div class="info-image">
+                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80"
+                    alt="Strongman Training"
+                    style="width:100%; border-radius:12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+        <div class="registration-section" id="form">
+            <h2>Program Registration</h2>
+            <form id="strongman-reg-form">
+                <div class="form-group-title">Personal Details</div>
+                <div class="form-grid">
+                    <div class="form-field full">
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-field">
+                        <label>Email Address</label>
+                        <input type="email" name="email" required placeholder="you@example.com">
+                    </div>
+                    <div class="form-field">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" required placeholder="+233 XX XXX XXXX">
+                    </div>
+                </div>
+
+                <div class="form-group-title">Training Preferences</div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label>Experience Level</label>
+                        <select name="experience" required>
+                            <option value="">Select Level</option>
+                            <option value="beginner">Beginner (New to Strongman)</option>
+                            <option value="intermediate">Intermediate (Powerlifting/Weightlifting background)</option>
+                            <option value="advanced">Advanced (Competitive Strongman)</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Main Strength Goal</label>
+                        <select name="goal" required>
+                            <option value="raw-power">Raw Power</option>
+                            <option value="competition">Competition Prep</option>
+                            <option value="functional">Functional Strength</option>
+                            <option value="mass">Mass Building</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group-title">Health & Safety</div>
+                <div class="form-field full" style="margin-bottom: 20px;">
+                    <label class="checkbox-item"
+                        style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" id="has-medical-toggle" name="hasMedical"
+                            style="width: 20px; height: 20px; accent-color: var(--red);">
+                        <span style="color: var(--gold); font-weight: 700; font-size: 14px;">I have a pre-existing
+                            medical condition or physical limitation.</span>
+                    </label>
+                </div>
+
+                <div id="medical-info-section"
+                    style="display: none; background: rgba(255, 26, 26, 0.05); border-left: 4px solid var(--red); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
+                    <div class="form-grid">
+                        <div class="form-field full">
+                            <label>Please describe your condition/limitation</label>
+                            <textarea name="medicalDetails" rows="2"
+                                placeholder="e.g. Previous back injury, heart condition, etc."></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label>Are you on any medication?</label>
+                            <input type="text" name="medications" placeholder="Specify medications if any">
+                        </div>
+                        <div class="form-field">
+                            <label>Emergency Contact Number</label>
+                            <input type="tel" name="emergencyPhone" placeholder="In case of emergency">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-area">
+                    <button type="submit" class="btn btn-red">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-overlay">
+        <div class="success-card">
+            <div
+                style="background: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                <i data-lucide="check" style="color: black; width: 32px; height: 32px; stroke-width: 3;"></i>
+            </div>
+            <h2 style="font-family: 'Anton'; font-size: 32px; margin-bottom: 16px;">POWER!</h2>
+            <p style="color: #aaa; line-height: 1.6; margin-bottom: 30px;">Your Strongman program application has been
+                received. Get ready to move some serious weight!</p>
+            <button class="btn btn-red" onclick="window.location.href='index.html'">Return Home</button>
+        </div>
+    </div>
+
+    <script src="js/strongman.js"></script>
+</body>
+
+</html>
